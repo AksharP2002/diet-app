@@ -6,33 +6,56 @@
 <script>(function(){var u=location.href.split("#")[0];var m={name:"Akshar Diet & Gym",short_name:"Diet+Gym",start_url:u,scope:u.replace(/[^/]*$/,""),display:"standalone",background_color:"#0f172a",theme_color:"#16a34a",icons:[{src:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9Ijk2IiBmaWxsPSIjMTZhMzRhIi8+PHRleHQgeD0iMjU2IiB5PSIzMzAiIGZvbnQtc2l6ZT0iMjYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSJib2xkIj5BUDwvdGV4dD48L3N2Zz4K",sizes:"512x512",type:"image/svg+xml"}]};document.getElementById("mf").href="data:application/manifest+json,"+encodeURIComponent(JSON.stringify(m));})();</script>
 <title>Akshar Diet & Gym</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;padding:env(safe-area-inset-top) 0 40px}
-header{padding:14px 16px 6px}h1{font-size:20px;margin:0}small{color:#94a3b8}
-.tabs{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;position:sticky;top:0;background:#0f172a;z-index:5}
-.tabs button{flex:0 0 auto;min-width:52px;min-height:46px;border:0;border-radius:12px;background:#1e293b;color:#e2e8f0;font-size:15px;font-weight:600}
-.tabs button.on{background:#16a34a}.tabs button.today{outline:2px solid #facc15}
-.card{background:#1e293b;margin:10px 12px;border-radius:16px;padding:12px}
-h2{font-size:17px;margin:4px 0 8px}.bar{height:14px;background:#334155;border-radius:7px;overflow:hidden;margin:4px 0 8px}.bar div{height:100%;background:#22c55e;transition:width .3s}
-.meal{border-radius:12px;padding:8px;margin:8px 0;background:#0f172a;border:2px solid transparent}
-.meal.due{border-color:#facc15;background:#3b3205}.meal.over{border-color:#ef4444;background:#3b0d0d}
-.mh{display:flex;justify-content:space-between;font-weight:700;font-size:16px}.tag{font-size:12px;padding:2px 8px;border-radius:8px;background:#facc15;color:#000}.over .tag{background:#ef4444;color:#fff}
-label.it{display:flex;align-items:center;gap:12px;min-height:52px;padding:6px 4px;border-bottom:1px solid #1e293b;font-size:15px}
-label.it input{width:28px;height:28px;flex:0 0 28px;accent-color:#22c55e}label.it span{flex:1}label.it b{font-size:12px;color:#94a3b8;text-align:right;white-space:nowrap}
-input:checked+span{text-decoration:line-through;color:#64748b}
-.row{display:flex;gap:8px}.row input{flex:1;min-height:48px;font-size:17px;border-radius:10px;border:0;padding:0 10px}.row button,.btn{min-height:48px;border:0;border-radius:10px;background:#16a34a;color:#fff;font-size:16px;font-weight:700;padding:0 16px}
-table{width:100%;border-collapse:collapse;font-size:15px}td{padding:6px;border-bottom:1px solid #334155}
-ul{padding-left:18px;margin:4px 0;color:#cbd5e1;font-size:14px}
+:root{--bg:#0b1020;--card:#141a2e;--card2:#1b2340;--line:#26304f;--tx:#e7ecf7;--mu:#8b96b3;--ac:#22c55e;--ac2:#14b8a6;--warn:#f59e0b;--bad:#ef4444;--r:18px}
+@media(prefers-color-scheme:light){:root{--bg:#f3f5fa;--card:#fff;--card2:#f1f4fa;--line:#e2e7f0;--tx:#0f172a;--mu:#64748b}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--tx);padding-bottom:calc(32px + env(safe-area-inset-bottom))}
+.hero{padding:calc(18px + env(safe-area-inset-top)) 18px 22px;background:linear-gradient(135deg,#16a34a,#0d9488);color:#fff;border-radius:0 0 28px 28px}
+.hero h1{margin:0;font-size:22px;letter-spacing:-.02em}.hero p{margin:2px 0 0;opacity:.85;font-size:13px}
+.hrow{display:flex;align-items:center;gap:18px;margin-top:16px}
+.ring{--p:0;width:96px;height:96px;flex:0 0 96px;border-radius:50%;background:conic-gradient(#fff calc(var(--p)*1%),rgba(255,255,255,.22) 0);display:grid;place-items:center;transition:--p .4s}
+.ring div{width:76px;height:76px;border-radius:50%;background:#0f7a5a;display:grid;place-items:center;font-weight:800;font-size:22px}
+.ring small{display:block;font-size:10px;font-weight:600;opacity:.8;text-align:center;margin-top:-4px}
+.hb{flex:1}.hb .lbl{display:flex;justify-content:space-between;font-size:13px;font-weight:600}
+.bar{height:8px;background:rgba(255,255,255,.25);border-radius:6px;overflow:hidden;margin:4px 0 10px}.bar div{height:100%;background:#fff;border-radius:6px;transition:width .4s}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:14px 14px 6px;position:sticky;top:0;background:var(--bg);z-index:5;scrollbar-width:none}
+.tabs button{flex:1 0 auto;min-width:48px;min-height:48px;border:1px solid var(--line);border-radius:14px;background:var(--card);color:var(--tx);font:600 15px inherit;font-family:inherit;position:relative}
+.tabs button.on{background:var(--ac);border-color:var(--ac);color:#fff}.tabs button.today:after{content:"";position:absolute;top:6px;right:6px;width:7px;height:7px;border-radius:50%;background:var(--warn)}
+.card{background:var(--card);margin:12px 14px;border-radius:var(--r);padding:16px;border:1px solid var(--line);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+h2{font-size:17px;margin:0 0 4px;letter-spacing:-.01em}.sub{color:var(--mu);font-size:13px;margin:0 0 8px}
+.meal{border-radius:14px;padding:12px;margin:10px 0 0;background:var(--card2);border:1.5px solid transparent}
+.meal.due{border-color:var(--warn);box-shadow:0 0 0 3px rgba(245,158,11,.15)}.meal.over{border-color:var(--bad)}
+.mh{display:flex;justify-content:space-between;align-items:center;font-weight:700}.time{color:var(--ac);font-variant-numeric:tabular-nums;margin-right:6px}
+.tag{font-size:11px;font-weight:800;padding:3px 8px;border-radius:20px;background:var(--warn);color:#000}.over .tag{background:var(--bad);color:#fff}
+.it{display:flex;align-items:center;gap:12px;min-height:54px;padding:8px 2px;border-top:1px solid var(--line);cursor:pointer}
+.it:first-of-type{border-top:0}
+.it input{appearance:none;-webkit-appearance:none;width:28px;height:28px;flex:0 0 28px;border:2px solid var(--mu);border-radius:9px;margin:0;display:grid;place-items:center;transition:.2s}
+.it input:checked{background:var(--ac);border-color:var(--ac)}
+.it input:checked:after{content:"";width:8px;height:14px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.it span{flex:1;font-size:15px}.it b{font-size:12px;color:var(--mu);font-weight:600;text-align:right;white-space:nowrap}
+.it input:checked~span{color:var(--mu);text-decoration:line-through}
+.ex{border-top:1px solid var(--line)}.ex:first-child{border-top:0}.ex .it{border:0}
+.how{flex:0 0 auto;min-height:36px;padding:0 12px;border-radius:20px;border:1px solid var(--line);background:var(--card2);color:var(--ac2);font:600 13px inherit;font-family:inherit;text-decoration:none;display:inline-flex;align-items:center}
+.vid{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;margin:0 0 10px;background:#000}.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vby{font-size:11px;color:var(--mu);margin:-6px 0 10px}
+.row{display:flex;gap:8px}.row input{flex:1;min-height:50px;font-size:17px;border-radius:12px;border:1px solid var(--line);background:var(--card2);color:var(--tx);padding:0 12px}
+.btn{min-height:50px;border:0;border-radius:12px;background:var(--ac);color:#fff;font:700 16px inherit;font-family:inherit;padding:0 18px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.stats div{background:var(--card2);border-radius:12px;padding:10px;text-align:center}.stats b{display:block;font-size:20px}.stats small{color:var(--mu);font-size:12px}
+table{width:100%;border-collapse:collapse;font-size:14px}td{padding:8px 4px;border-bottom:1px solid var(--line)}tr:first-child td{color:var(--mu);font-weight:600}
+.del{min-height:34px;padding:0 10px;border-radius:10px;border:1px solid var(--line);background:none;color:var(--mu)}
+ul{padding-left:18px;margin:6px 0 0;color:var(--mu);font-size:14px}li{margin:4px 0}
 </style></head><body>
-<header><h1>Akshar's Diet & Gym</h1><small>Target 2,600–2,700 kcal · ~180 g protein · 3–4 L water · Veg Gujarati</small></header>
-<div class="tabs" id="tabs"></div>
-<div class="card"><h2 id="dtitle"></h2><div>Overall <span id="pAll"></span></div><div class="bar"><div id="bAll"></div></div>
-<div>Meals <span id="pM"></span></div><div class="bar"><div id="bM"></div></div><div>Exercise <span id="pE"></span></div><div class="bar"><div id="bE"></div></div>
-<small id="tot"></small></div>
-<div class="card"><h2>🍽️ Meal timetable</h2><div id="meals"></div></div>
-<div class="card"><h2 id="gt">🏋️ Gym</h2><div id="gym"></div></div>
-<div class="card"><h2>⚖️ Weekly weigh-in (Monday)</h2><div class="row"><input id="wt" type="number" step="0.1" inputmode="decimal" placeholder="Weight kg"><button onclick="addW()">Save</button></div>
-<p id="wsum"></p><table id="wtab"></table></div>
-<div class="card"><h2>Rules</h2><ul><li>Chai: 150 ml low-fat milk + tea + sugar-free sweetener, only 2 cups (8:00 & 4:30).</li><li>Dry fruits max 20–25 g/day. No sweets, no fried snacks.</li><li>Water 3–4 L: 500 ml on waking, a glass with every meal, 1 L during gym.</li><li>Cook with ≤1 tsp oil per dish. Weigh paneer/tofu/rice.</li></ul></div>
+<header class="hero"><h1>Akshar's Diet &amp; Gym</h1><p id="dtitle"></p>
+<div class="hrow"><div class="ring" id="ring"><div><span id="pAllN">0%</span></div></div>
+<div class="hb"><div class="lbl"><span>Meals</span><span id="pM"></span></div><div class="bar"><div id="bM"></div></div>
+<div class="lbl"><span>Exercise</span><span id="pE"></span></div><div class="bar"><div id="bE"></div></div>
+<div class="lbl" style="opacity:.85"><span id="tot"></span><span id="pAll"></span></div><div id="bAll" style="display:none"></div></div></div></header>
+<nav class="tabs" id="tabs"></nav>
+<section class="card"><h2>🍽️ Meal timetable</h2><p class="sub">2,600–2,700 kcal · ~180 g protein · 3–4 L water</p><div id="meals"></div></section>
+<section class="card"><h2 id="gt">🏋️ Gym</h2><p class="sub">Crunch Fitness · tap “How to” for a form demo</p><div id="gym"></div></section>
+<section class="card"><h2>⚖️ Weekly weigh-in</h2><p class="sub">Every Monday, morning, empty stomach</p><div class="row"><input id="wt" type="number" step="0.1" inputmode="decimal" placeholder="Weight (kg)"><button class="btn" onclick="addW()">Save</button></div>
+<div id="wsum"></div><table id="wtab"></table></section>
+<section class="card"><h2>📌 Rules</h2><ul><li>Chai: 150 ml low-fat milk + tea + sugar-free sweetener, only 2 cups (8:00 &amp; 4:30).</li><li>Dry fruits max 20–25 g/day. No sweets, no fried snacks.</li><li>Water 3–4 L: 500 ml on waking, a glass with every meal, 1 L during gym.</li><li>Cook with ≤1 tsp oil per dish. Weigh paneer/tofu/rice.</li></ul></section>
 <script>
 const C1=['Chai #1 (150 ml low-fat milk, sweetener)',90,5],C2=['Chai #2 (150 ml low-fat milk, sweetener)',90,5],
 SH=['Protein shake: 1.5 scoop (45 g) whey + 250 ml low-fat milk + 1 apple/½ banana blended',400,45],
@@ -53,39 +76,43 @@ const gym={1:['Upper body',[...U,'Incline walk 20 min']],2:['Lower body',[...L,'
 5:['Lower + core',[...L.slice(0,5),'Plank 3×45 s','Hanging knee raises 3×12','Cable crunch 3×15','Dead bug 3×12','Incline walk 15 min']],
 6:['Optional max-burn circuit (5 rounds)',['Rowing sprint 250 m ×5 rounds','Battle ropes 30 s ×5 rounds','Kettlebell swings 15 ×5 rounds','Sled push 20 m ×5 rounds','Bike sprint 30 s ×5 rounds','Incline walk 30 min']],
 0:['Rest day',['8,000–10,000 steps','Stretching / mobility 10 min']]};
+const VM=[["Bench", "Bench press", "hWbUlkb5Ms4", "Jeff Nippard"], ["Lat pulldown", "Lat pulldown", "hnSqbBk15tw", "Jeff Nippard"], ["shoulder press", "Seated dumbbell shoulder press", "k6tzKisR3NY", "Andrew Kwong (DeltaBolic)"], ["cable row", "Seated cable row", "8QuMq1GMMng", "Colossus Fitness"], ["Incline DB", "Incline dumbbell press", "8fXfwG4ftaQ", "Andrew Kwong (DeltaBolic)"], ["Biceps curl", "Dumbbell biceps curl", "XE_pHwbst04", "Fit Father Project - Fitness For Busy Fathers"], ["pushdown", "Triceps pushdown", "_w-HpW70nSQ", "ScottHermanFitness"], ["Leg press", "Leg press", "nDh_BlnLCGc", "Jeff Nippard"], ["Goblet", "Goblet squat", "lRYBbchqxtI", "SquatCouple"], ["Romanian", "Dumbbell romanian deadlift", "5zmlnbWb-g4", "ATHLEAN-X\u2122"], ["lunges", "Walking lunges", "Pwsn3HR4L90", "ATHLEAN-X\u2122"], ["Leg curl", "Lying leg curl", "lGNeJsdqJwg", "MuscleTech"], ["Leg extension", "Leg extension", "ztNBgrGy6FQ", "Jeff Nippard"], ["Calf", "Standing calf raise", "n-5T_oYc1oU", "Luke Selway | Strength Coaching Online"], ["Face pulls", "Face pulls", "8686PLZB_1Q", "ATHLEAN-X\u2122"], ["Hammer", "Hammer curl", "lmIo_gVE8T4", "TylerPath"], ["Overhead triceps", "Overhead triceps extension", "iKX6vEhrGxw", "Renaissance Periodization"], ["Plank", "Plank", "v25dawSzRTM", "Jeremy Ethier"], ["knee raises", "Hanging knee raises", "X-ACS9vpRyU", "ScottHermanFitness"], ["Cable crunch", "Cable crunch", "dkGwcfo9zto", "Kade Howell"], ["Dead bug", "Dead bug", "zechBkcIMf0", "Southern California University of Health Sciences"], ["Incline walk", "Incline treadmill walk", "HwXYMPGjlUg", "Shubham Gupta"], ["Rowing", "Rowing machine technique", "7EQJFjM4Vs8", "Jordan Bradburne"], ["Battle", "Battle ropes", "Bmdhgscsk-Y", "The Facility Sports Performance"], ["Kettlebell", "Kettlebell swing", "SR_4kUbkEaw", "Monroe Miller"], ["Sled", "Sled push", "Qw8q55JR5VY", "Juxfit"], ["Stair", "Stair climber", "LM9lgFK4mkk", "Gerardi Performance"], ["Bike", "Stationary bike sprint", "S5RHCanTTmQ", "Indoor Cycling Society | Rhythm Spin Classes."]];
 const N=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-const now=new Date(),todayW=now.getDay();let sel=todayW;
-function dateFor(w){const d=new Date(now);d.setDate(d.getDate()+((w-todayW+7)%7)-(w<todayW&&w!==0||todayW===0&&w!==0?0:0));const off=((w+6)%7)-((todayW+6)%7);const x=new Date(now);x.setDate(now.getDate()+off);return x}
-// cleanup old day state (reset each new day)
-for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith('chk-')){const d=k.slice(4);const mon=iso(dateFor(1));if(d<mon)localStorage.removeItem(k)}}
-const key=()=> 'chk-'+iso(dateFor(sel));
+const now=new Date(),todayW=now.getDay();let sel=todayW;const open={};
+function dateFor(w){const off=((w+6)%7)-((todayW+6)%7);const x=new Date(now);x.setDate(now.getDate()+off);return x}
+for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith('chk-')&&k.slice(4)<iso(dateFor(1)))localStorage.removeItem(k)}
+const key=()=>'chk-'+iso(dateFor(sel));
 const st=()=>JSON.parse(localStorage.getItem(key())||'{}');
 function tog(id,v){const s=st();s[id]=v;localStorage.setItem(key(),JSON.stringify(s));render()}
 function mins(t){const[h,m]=t.split(':');return h*60+ +m}
+const vfor=x=>VM.find(m=>x.toLowerCase().includes(m[0].toLowerCase()));
+function how(j){open[j]=!open[j];render()}
 function render(){
  document.getElementById('tabs').innerHTML=[1,2,3,4,5,6,0].map(w=>`<button class="${w===sel?'on':''} ${w===todayW?'today':''}" onclick="sel=${w};render()">${N[w]}</button>`).join('');
  const s=st(),d=days[sel],g=gym[sel];let mt=0,md=0,et=0,ed=0,kc=0,pr=0;
- document.getElementById('dtitle').textContent=(sel===todayW?'Today · ':'')+dateFor(sel).toDateString();
- const cur=now.getHours()*60+now.getMinutes();
- // due = latest meal slot started with unchecked items; earlier unchecked = overdue
- let dueIdx=-1;d.forEach((m,i)=>{if(mins(m[0])<=cur)dueIdx=i});
+ document.getElementById('dtitle').textContent=(sel===todayW?'Today · ':'')+dateFor(sel).toLocaleDateString(undefined,{weekday:'long',month:'short',day:'numeric'});
+ const cur=now.getHours()*60+now.getMinutes();let dueIdx=-1;d.forEach((m,i)=>{if(mins(m[0])<=cur)dueIdx=i});
  document.getElementById('meals').innerHTML=d.map((m,i)=>{const done=m[2].every((_,j)=>s['m'+i+'_'+j]);let cls='';
   if(sel===todayW&&!done&&i<=dueIdx)cls=i===dueIdx?'due':'over';
   const sk=m[2].reduce((a,x)=>a+x[1],0),sp=m[2].reduce((a,x)=>a+x[2],0);
-  return `<div class="meal ${cls}"><div class="mh"><span>${m[0]} · ${m[1]}</span>${cls?`<span class="tag">${cls==='due'?'DUE NOW':'OVERDUE'}</span>`:''}</div><small>${sk} kcal · ${sp} g protein</small>`+
+  return `<div class="meal ${cls}"><div class="mh"><span><span class="time">${m[0]}</span>${m[1]}</span>${cls?`<span class="tag">${cls==='due'?'DUE NOW':'OVERDUE'}</span>`:''}</div><p class="sub" style="margin:2px 0 4px">${sk} kcal · ${sp} g protein</p>`+
   m[2].map((x,j)=>{const id='m'+i+'_'+j;mt++;kc+=x[1];pr+=x[2];if(s[id])md++;return `<label class="it"><input type="checkbox" ${s[id]?'checked':''} onchange="tog('${id}',this.checked)"><span>${x[0]}</span><b>${x[1]} kcal<br>${x[2]} g P</b></label>`}).join('')+'</div>'}).join('');
- document.getElementById('gt').textContent='🏋️ Crunch Fitness · '+g[0];
- document.getElementById('gym').innerHTML=g[1].map((x,j)=>{const id='e'+j;et++;if(s[id])ed++;return `<label class="it"><input type="checkbox" ${s[id]?'checked':''} onchange="tog('${id}',this.checked)"><span>${x}</span></label>`}).join('');
+ document.getElementById('gt').textContent='🏋️ '+g[0];
+ document.getElementById('gym').innerHTML=g[1].map((x,j)=>{const id='e'+j;et++;if(s[id])ed++;const v=vfor(x);
+  const btn=v&&v[2]?`<button class="how" onclick="event.preventDefault();how(${j})">${open[j]?'Hide':'▶ How to'}</button>`:(v?`<a class="how" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent(v[1]+' form')}">🔎 How to</a>`:`<a class="how" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent(x.replace(/[0-9,–]+ ?(min|steps)?/g,'').trim()+' how to')}">🔎 How to</a>`);
+  const vid=open[j]&&v&&v[2]?`<div class="vid"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/${v[2]}?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="${v[1]}"></iframe></div><div class="vby">${v[1]} · ${v[3]}</div>`:'';
+  return `<div class="ex"><label class="it"><input type="checkbox" ${s[id]?'checked':''} onchange="tog('${id}',this.checked)"><span>${x}</span>${btn}</label>${vid}</div>`}).join('');
  const p=(a,b)=>b?Math.round(a/b*100):0;
- [['M',md,mt],['E',ed,et],['All',md+ed,mt+et]].forEach(([n,a,b])=>{document.getElementById('p'+n).textContent=p(a,b)+'% ('+a+'/'+b+')';document.getElementById('b'+n).style.width=p(a,b)+'%'});
- document.getElementById('tot').textContent=`Day plan: ${kc} kcal · ${pr} g protein`;
+ [['M',md,mt],['E',ed,et],['All',md+ed,mt+et]].forEach(([n,a,b])=>{document.getElementById('p'+n).textContent=n==='All'?'':a+'/'+b;document.getElementById('b'+n).style.width=p(a,b)+'%'});
+ const pa=p(md+ed,mt+et);document.getElementById('ring').style.background=`conic-gradient(#fff ${pa}%,rgba(255,255,255,.22) 0)`;document.getElementById('pAllN').textContent=pa+'%';
+ document.getElementById('tot').textContent=`${kc} kcal · ${pr} g protein`;
  renderW()}
 const W=()=>JSON.parse(localStorage.getItem('weighins')||'[]');
-function addW(){const v=parseFloat(document.getElementById('wt').value);if(!v)return;const w=W().filter(x=>x.d!==iso(dateFor(1)));w.push({d:iso(dateFor(1)),kg:v});w.sort((a,b)=>a.d<b.d?-1:1);localStorage.setItem('weighins',JSON.stringify(w));document.getElementById('wt').value='';renderW()}
+function addW(){const v=parseFloat(document.getElementById('wt').value);if(!v)return;const d=iso(dateFor(1));const w=W().filter(x=>x.d!==d);w.push({d,kg:v});w.sort((a,b)=>a.d<b.d?-1:1);localStorage.setItem('weighins',JSON.stringify(w));document.getElementById('wt').value='';renderW()}
 function delW(d){if(confirm('Delete '+d+'?')){localStorage.setItem('weighins',JSON.stringify(W().filter(x=>x.d!==d)));renderW()}}
 function renderW(){const w=W(),last=w.length?w[w.length-1].kg:135;
- document.getElementById('wsum').innerHTML=`Start: <b>135 kg</b> · Current: <b>${last} kg</b> · Lost: <b>${(135-last).toFixed(1)} kg</b>`+(todayW===1?'<br>📅 It\'s Monday — weigh in (morning, empty stomach).':'');
- document.getElementById('wtab').innerHTML='<tr><td>Week (Mon)</td><td>kg</td><td>Δ start</td><td></td></tr><tr><td>Start</td><td>135</td><td>0</td><td></td></tr>'+w.map(x=>`<tr><td>${x.d}</td><td>${x.kg}</td><td>${(x.kg-135).toFixed(1)}</td><td><button class="btn" style="min-height:36px;background:#475569" onclick="delW('${x.d}')">✕</button></td></tr>`).join('')}
+ document.getElementById('wsum').innerHTML=`<div class="stats"><div><b>135</b><small>Start kg</small></div><div><b>${last}</b><small>Current kg</small></div><div><b style="color:var(--ac)">${(135-last).toFixed(1)}</b><small>Lost kg</small></div></div>`+(todayW===1?'<p class="sub">📅 It\'s Monday — weigh in today.</p>':'');
+ document.getElementById('wtab').innerHTML='<tr><td>Week (Mon)</td><td>kg</td><td>Δ</td><td></td></tr><tr><td>Start</td><td>135</td><td>0</td><td></td></tr>'+w.map(x=>`<tr><td>${x.d}</td><td>${x.kg}</td><td>${(x.kg-135).toFixed(1)}</td><td><button class="del" onclick="delW('${x.d}')">✕</button></td></tr>`).join('')}
 render();setInterval(()=>{const n=new Date();if(iso(n)!==iso(now))location.reload();else{now.setTime(n.getTime());render()}},60000);
 </script></body></html>
