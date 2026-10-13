@@ -1,0 +1,91 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#16a34a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Diet+Gym">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9Ijk2IiBmaWxsPSIjMTZhMzRhIi8+PHRleHQgeD0iMjU2IiB5PSIzMzAiIGZvbnQtc2l6ZT0iMjYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSJib2xkIj5BUDwvdGV4dD48L3N2Zz4K"><link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9Ijk2IiBmaWxsPSIjMTZhMzRhIi8+PHRleHQgeD0iMjU2IiB5PSIzMzAiIGZvbnQtc2l6ZT0iMjYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSJib2xkIj5BUDwvdGV4dD48L3N2Zz4K"><link rel="manifest" id="mf">
+<script>(function(){var u=location.href.split("#")[0];var m={name:"Akshar Diet & Gym",short_name:"Diet+Gym",start_url:u,scope:u.replace(/[^/]*$/,""),display:"standalone",background_color:"#0f172a",theme_color:"#16a34a",icons:[{src:"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9Ijk2IiBmaWxsPSIjMTZhMzRhIi8+PHRleHQgeD0iMjU2IiB5PSIzMzAiIGZvbnQtc2l6ZT0iMjYwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjZmZmIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSJib2xkIj5BUDwvdGV4dD48L3N2Zz4K",sizes:"512x512",type:"image/svg+xml"}]};document.getElementById("mf").href="data:application/manifest+json,"+encodeURIComponent(JSON.stringify(m));})();</script>
+<title>Akshar Diet & Gym</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:#0f172a;color:#e2e8f0;padding:env(safe-area-inset-top) 0 40px}
+header{padding:14px 16px 6px}h1{font-size:20px;margin:0}small{color:#94a3b8}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:8px 12px;position:sticky;top:0;background:#0f172a;z-index:5}
+.tabs button{flex:0 0 auto;min-width:52px;min-height:46px;border:0;border-radius:12px;background:#1e293b;color:#e2e8f0;font-size:15px;font-weight:600}
+.tabs button.on{background:#16a34a}.tabs button.today{outline:2px solid #facc15}
+.card{background:#1e293b;margin:10px 12px;border-radius:16px;padding:12px}
+h2{font-size:17px;margin:4px 0 8px}.bar{height:14px;background:#334155;border-radius:7px;overflow:hidden;margin:4px 0 8px}.bar div{height:100%;background:#22c55e;transition:width .3s}
+.meal{border-radius:12px;padding:8px;margin:8px 0;background:#0f172a;border:2px solid transparent}
+.meal.due{border-color:#facc15;background:#3b3205}.meal.over{border-color:#ef4444;background:#3b0d0d}
+.mh{display:flex;justify-content:space-between;font-weight:700;font-size:16px}.tag{font-size:12px;padding:2px 8px;border-radius:8px;background:#facc15;color:#000}.over .tag{background:#ef4444;color:#fff}
+label.it{display:flex;align-items:center;gap:12px;min-height:52px;padding:6px 4px;border-bottom:1px solid #1e293b;font-size:15px}
+label.it input{width:28px;height:28px;flex:0 0 28px;accent-color:#22c55e}label.it span{flex:1}label.it b{font-size:12px;color:#94a3b8;text-align:right;white-space:nowrap}
+input:checked+span{text-decoration:line-through;color:#64748b}
+.row{display:flex;gap:8px}.row input{flex:1;min-height:48px;font-size:17px;border-radius:10px;border:0;padding:0 10px}.row button,.btn{min-height:48px;border:0;border-radius:10px;background:#16a34a;color:#fff;font-size:16px;font-weight:700;padding:0 16px}
+table{width:100%;border-collapse:collapse;font-size:15px}td{padding:6px;border-bottom:1px solid #334155}
+ul{padding-left:18px;margin:4px 0;color:#cbd5e1;font-size:14px}
+</style></head><body>
+<header><h1>Akshar's Diet & Gym</h1><small>Target 2,600–2,700 kcal · ~180 g protein · 3–4 L water · Veg Gujarati</small></header>
+<div class="tabs" id="tabs"></div>
+<div class="card"><h2 id="dtitle"></h2><div>Overall <span id="pAll"></span></div><div class="bar"><div id="bAll"></div></div>
+<div>Meals <span id="pM"></span></div><div class="bar"><div id="bM"></div></div><div>Exercise <span id="pE"></span></div><div class="bar"><div id="bE"></div></div>
+<small id="tot"></small></div>
+<div class="card"><h2>🍽️ Meal timetable</h2><div id="meals"></div></div>
+<div class="card"><h2 id="gt">🏋️ Gym</h2><div id="gym"></div></div>
+<div class="card"><h2>⚖️ Weekly weigh-in (Monday)</h2><div class="row"><input id="wt" type="number" step="0.1" inputmode="decimal" placeholder="Weight kg"><button onclick="addW()">Save</button></div>
+<p id="wsum"></p><table id="wtab"></table></div>
+<div class="card"><h2>Rules</h2><ul><li>Chai: 150 ml low-fat milk + tea + sugar-free sweetener, only 2 cups (8:00 & 4:30).</li><li>Dry fruits max 20–25 g/day. No sweets, no fried snacks.</li><li>Water 3–4 L: 500 ml on waking, a glass with every meal, 1 L during gym.</li><li>Cook with ≤1 tsp oil per dish. Weigh paneer/tofu/rice.</li></ul></div>
+<script>
+const C1=['Chai #1 (150 ml low-fat milk, sweetener)',90,5],C2=['Chai #2 (150 ml low-fat milk, sweetener)',90,5],
+SH=['Protein shake: 1.5 scoop (45 g) whey + 250 ml low-fat milk + 1 apple/½ banana blended',400,45],
+DF=['500 ml warm water + 20 g dry fruits (almonds/walnuts)',120,4];
+const days={
+1:[[ '8:00','Breakfast',[['3 moong dal chilla (120 g dal) stuffed with 60 g paneer',520,36],C1]],['11:00','Snack',[['200 g Greek yogurt/hung dahi + 1 orange',200,20]]],['13:30','Lunch',[['2 roti',240,8],['1 cup Gujarati dal',180,10],['150 g cooked rice',195,4],['1 cup sabzi (low oil)',150,4],['Salad cucumber/onion/tomato',30,1]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['Tofu bhurji (200 g tofu, onion, garlic)',290,32],['1 roti',120,4]]]],
+2:[['8:00','Breakfast',[['Handvo 2 pcs (200 g)',320,12],['Paneer tikka 100 g (grilled)',265,18],C1]],['11:00','Snack',[['Moong sprouts chaat 150 g',160,12],['1 apple',95,0]]],['13:30','Lunch',[['2 roti',240,8],['1 cup dal fry',220,12],['1 cup chana sabzi',270,14],['150 g dahi',90,5]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['Tofu tikka 200 g',290,32],['100 g mixed sabzi',80,3]]]],
+3:[['8:00','Breakfast',[['3 plain dosa (no ghee) + 1 cup sambar',510,18],['150 g Greek yogurt',150,15],C1]],['11:00','Snack',[['150 g Greek yogurt + pinch chaat masala',150,15],['1 orange',60,1]]],['13:30','Lunch',[['150 g cooked rice',195,4],['1 cup Gujarati dal',180,10],['Paneer sabzi (100 g paneer)',300,18],['Salad',30,1]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['2 moong chilla stuffed with 100 g tofu',380,30]]]],
+4:[['8:00','Breakfast',[['Dhokla 4 pcs (150 g)',240,10],['Paneer 80 g (grilled/bhurji)',210,15],['150 g Greek yogurt',150,15],C1]],['11:00','Snack',[['Masala chana sprouts 150 g',180,12],['Grapes 150 g',100,1]]],['13:30','Lunch',[['2 roti',240,8],['1 cup dal fry',220,12],['Tofu-capsicum sabzi (150 g tofu)',240,24]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['Moong dal khichdi (60 g dal + 30 g rice)',330,16],['150 g dahi',90,5]]]],
+5:[['8:00','Breakfast',[['2 roti + paneer bhurji (120 g paneer)',570,30],C1]],['11:00','Snack',[['200 g Greek yogurt + 1 apple',295,20]]],['13:30','Lunch',[['150 g cooked rice',195,4],['1 cup chana masala',270,14],['1 cup Gujarati dal',180,10],['Salad',30,1]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['Tofu stir-fry with veggies (200 g tofu)',350,34],['1 roti',120,4]]]],
+6:[['8:00','Breakfast',[['Handvo 2 pcs (200 g)',320,12],['200 g Greek yogurt',200,20],C1]],['11:00','Snack',[['Moong sprouts chaat 150 g',160,12],['1 orange',60,1]]],['13:30','Lunch',[['2 roti',240,8],['1 cup Gujarati dal',180,10],['Paneer tikka 120 g',320,22],['1 cup sabzi',100,3]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['3 moong chilla stuffed with 100 g tofu',420,30]]]],
+0:[['8:00','Breakfast',[['2 plain dosa + 1 cup sambar',390,15],['Paneer 80 g',210,15],C1]],['11:00','Snack',[['200 g Greek yogurt + 100 g grapes',270,20]]],['13:30','Lunch',[['1 cup dal fry',220,12],['150 g cooked rice',195,4],['1 roti',120,4],['1 cup chana sabzi',270,14]]],['16:30','Chai + shake (rest day)',[C2,SH]],['20:00','Dinner',[['Tofu bhurji (200 g tofu) with onion-capsicum',290,32]]]]};
+for(const k in days)days[k].unshift(['7:00','Wake-up',[DF]]);
+const U=['Bench press 4×8','Lat pulldown 4×10','Seated DB shoulder press 3×10','Seated cable row 3×12','Incline DB press 3×10','Biceps curl 3×12','Triceps pushdown 3×12'],
+L=['Leg press 4×10','Goblet squat 3×12','Romanian deadlift (DB) 3×10','Walking lunges 3×10/leg','Leg curl 3×12','Leg extension 3×12','Calf raises 4×15'];
+const gym={1:['Upper body',[...U,'Incline walk 20 min']],2:['Lower body',[...L,'Bike 15 min']],3:['Cardio',['Incline walk 40 min (12% / 5 km/h)','Rowing intervals 10 min (1 min hard / 1 min easy)']],
+4:['Upper body',[...U.slice(0,4),'Face pulls 3×15','Hammer curl 3×12','Overhead triceps extension 3×12','Stair climber 20 min']],
+5:['Lower + core',[...L.slice(0,5),'Plank 3×45 s','Hanging knee raises 3×12','Cable crunch 3×15','Dead bug 3×12','Incline walk 15 min']],
+6:['Optional max-burn circuit (5 rounds)',['Rowing sprint 250 m ×5 rounds','Battle ropes 30 s ×5 rounds','Kettlebell swings 15 ×5 rounds','Sled push 20 m ×5 rounds','Bike sprint 30 s ×5 rounds','Incline walk 30 min']],
+0:['Rest day',['8,000–10,000 steps','Stretching / mobility 10 min']]};
+const N=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const now=new Date(),todayW=now.getDay();let sel=todayW;
+function dateFor(w){const d=new Date(now);d.setDate(d.getDate()+((w-todayW+7)%7)-(w<todayW&&w!==0||todayW===0&&w!==0?0:0));const off=((w+6)%7)-((todayW+6)%7);const x=new Date(now);x.setDate(now.getDate()+off);return x}
+// cleanup old day state (reset each new day)
+for(let i=localStorage.length-1;i>=0;i--){const k=localStorage.key(i);if(k&&k.startsWith('chk-')){const d=k.slice(4);const mon=iso(dateFor(1));if(d<mon)localStorage.removeItem(k)}}
+const key=()=> 'chk-'+iso(dateFor(sel));
+const st=()=>JSON.parse(localStorage.getItem(key())||'{}');
+function tog(id,v){const s=st();s[id]=v;localStorage.setItem(key(),JSON.stringify(s));render()}
+function mins(t){const[h,m]=t.split(':');return h*60+ +m}
+function render(){
+ document.getElementById('tabs').innerHTML=[1,2,3,4,5,6,0].map(w=>`<button class="${w===sel?'on':''} ${w===todayW?'today':''}" onclick="sel=${w};render()">${N[w]}</button>`).join('');
+ const s=st(),d=days[sel],g=gym[sel];let mt=0,md=0,et=0,ed=0,kc=0,pr=0;
+ document.getElementById('dtitle').textContent=(sel===todayW?'Today · ':'')+dateFor(sel).toDateString();
+ const cur=now.getHours()*60+now.getMinutes();
+ // due = latest meal slot started with unchecked items; earlier unchecked = overdue
+ let dueIdx=-1;d.forEach((m,i)=>{if(mins(m[0])<=cur)dueIdx=i});
+ document.getElementById('meals').innerHTML=d.map((m,i)=>{const done=m[2].every((_,j)=>s['m'+i+'_'+j]);let cls='';
+  if(sel===todayW&&!done&&i<=dueIdx)cls=i===dueIdx?'due':'over';
+  const sk=m[2].reduce((a,x)=>a+x[1],0),sp=m[2].reduce((a,x)=>a+x[2],0);
+  return `<div class="meal ${cls}"><div class="mh"><span>${m[0]} · ${m[1]}</span>${cls?`<span class="tag">${cls==='due'?'DUE NOW':'OVERDUE'}</span>`:''}</div><small>${sk} kcal · ${sp} g protein</small>`+
+  m[2].map((x,j)=>{const id='m'+i+'_'+j;mt++;kc+=x[1];pr+=x[2];if(s[id])md++;return `<label class="it"><input type="checkbox" ${s[id]?'checked':''} onchange="tog('${id}',this.checked)"><span>${x[0]}</span><b>${x[1]} kcal<br>${x[2]} g P</b></label>`}).join('')+'</div>'}).join('');
+ document.getElementById('gt').textContent='🏋️ Crunch Fitness · '+g[0];
+ document.getElementById('gym').innerHTML=g[1].map((x,j)=>{const id='e'+j;et++;if(s[id])ed++;return `<label class="it"><input type="checkbox" ${s[id]?'checked':''} onchange="tog('${id}',this.checked)"><span>${x}</span></label>`}).join('');
+ const p=(a,b)=>b?Math.round(a/b*100):0;
+ [['M',md,mt],['E',ed,et],['All',md+ed,mt+et]].forEach(([n,a,b])=>{document.getElementById('p'+n).textContent=p(a,b)+'% ('+a+'/'+b+')';document.getElementById('b'+n).style.width=p(a,b)+'%'});
+ document.getElementById('tot').textContent=`Day plan: ${kc} kcal · ${pr} g protein`;
+ renderW()}
+const W=()=>JSON.parse(localStorage.getItem('weighins')||'[]');
+function addW(){const v=parseFloat(document.getElementById('wt').value);if(!v)return;const w=W().filter(x=>x.d!==iso(dateFor(1)));w.push({d:iso(dateFor(1)),kg:v});w.sort((a,b)=>a.d<b.d?-1:1);localStorage.setItem('weighins',JSON.stringify(w));document.getElementById('wt').value='';renderW()}
+function delW(d){if(confirm('Delete '+d+'?')){localStorage.setItem('weighins',JSON.stringify(W().filter(x=>x.d!==d)));renderW()}}
+function renderW(){const w=W(),last=w.length?w[w.length-1].kg:135;
+ document.getElementById('wsum').innerHTML=`Start: <b>135 kg</b> · Current: <b>${last} kg</b> · Lost: <b>${(135-last).toFixed(1)} kg</b>`+(todayW===1?'<br>📅 It\'s Monday — weigh in (morning, empty stomach).':'');
+ document.getElementById('wtab').innerHTML='<tr><td>Week (Mon)</td><td>kg</td><td>Δ start</td><td></td></tr><tr><td>Start</td><td>135</td><td>0</td><td></td></tr>'+w.map(x=>`<tr><td>${x.d}</td><td>${x.kg}</td><td>${(x.kg-135).toFixed(1)}</td><td><button class="btn" style="min-height:36px;background:#475569" onclick="delW('${x.d}')">✕</button></td></tr>`).join('')}
+render();setInterval(()=>{const n=new Date();if(iso(n)!==iso(now))location.reload();else{now.setTime(n.getTime());render()}},60000);
+</script></body></html>
