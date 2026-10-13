@@ -51,23 +51,29 @@ ul{padding-left:18px;margin:6px 0 0;color:var(--mu);font-size:14px}li{margin:4px
 <div class="lbl"><span>Exercise</span><span id="pE"></span></div><div class="bar"><div id="bE"></div></div>
 <div class="lbl" style="opacity:.85"><span id="tot"></span><span id="pAll"></span></div><div id="bAll" style="display:none"></div></div></div></header>
 <nav class="tabs" id="tabs"></nav>
-<section class="card"><h2>🍽️ Meal timetable</h2><p class="sub">2,600–2,700 kcal · ~180 g protein · 3–4 L water</p><div id="meals"></div></section>
+<section class="card"><h2>🍽️ Meal timetable</h2><p class="sub">2,600–2,700 kcal · 190 g+ protein · 3–4 L water</p><div id="meals"></div></section>
 <section class="card"><h2 id="gt">🏋️ Gym</h2><p class="sub">Crunch Fitness · tap “How to” for a form demo</p><div id="gym"></div></section>
 <section class="card"><h2>⚖️ Weekly weigh-in</h2><p class="sub">Every Monday, morning, empty stomach</p><div class="row"><input id="wt" type="number" step="0.1" inputmode="decimal" placeholder="Weight (kg)"><button class="btn" onclick="addW()">Save</button></div>
 <div id="wsum"></div><table id="wtab"></table></section>
-<section class="card"><h2>📌 Rules</h2><ul><li>Chai: 150 ml low-fat milk + tea + sugar-free sweetener, only 2 cups (8:00 &amp; 4:30).</li><li>Dry fruits max 20–25 g/day. No sweets, no fried snacks.</li><li>Water 3–4 L: 500 ml on waking, a glass with every meal, 1 L during gym.</li><li>Cook with ≤1 tsp oil per dish. Weigh paneer/tofu/rice.</li></ul></section>
+<section class="card"><h2>📌 Rules</h2><ul><li>Only these foods: dal, dal fry, rice, roti, handvo, dosa, dhokla, apple/grapes/orange, dry fruits, whey, milk, chai, water.</li><li>Chai: 150 ml low-fat milk + sugar-free sweetener, only 2 cups (8:00 &amp; 4:30).</li><li>Dry fruits max 20–25 g/day. No sweets, no fried snacks.</li><li>Water 3–4 L: 500 ml on waking, a glass with every meal, 1 L during gym.</li><li>Dosa plain or with dal (no sambar/chutney). ≤1 tsp oil per dish; no ghee on roti. Weigh rice and dal.</li></ul></section>
 <script>
-const C1=['Chai #1 (150 ml low-fat milk, sweetener)',90,5],C2=['Chai #2 (150 ml low-fat milk, sweetener)',90,5],
-SH=['Protein shake: 1.5 scoop (45 g) whey + 250 ml low-fat milk + 1 apple/½ banana blended',400,45],
-DF=['500 ml warm water + 20 g dry fruits (almonds/walnuts)',120,4];
+const C1=['Chai #1 (150 ml low-fat milk, sugar-free sweetener)',90,5],C2=['Chai #2 (150 ml low-fat milk, sugar-free sweetener)',90,5],
+DF=['500 ml water + 20 g dry fruits (almonds/walnuts)',120,4],
+S1=['Shake #1: 2 scoops (60 g) chocolate whey + 250 ml low-fat milk + 1 apple, blended',460,57],
+S2=['Shake #2 (pre-gym): 1.5 scoops (45 g) vanilla whey + 250 ml low-fat milk + 1 orange or 100 g grapes',365,45],
+S3=['Shake #3: 1 scoop (30 g) whey + 200 ml low-fat milk',220,31];
+const R2=['2 roti (no ghee)',240,8],R1=['1 roti (no ghee)',120,4],R3=['3 roti (no ghee)',360,12],RI=['150 g cooked rice',195,4],
+GD=['1 cup Gujarati dal',180,10],DF1=['1 cup dal fry (1 tsp oil)',220,12],DFh=['½ cup dal fry',110,6],GDh=['½ cup Gujarati dal',90,5];
+const sn=['11:00','Shake #1',[S1]],pg=['16:30','Chai + pre-gym shake',[C2,S2]];
+const B=(f)=>['8:00','Breakfast + chai',[...f,C1]],LU=(f)=>['13:30','Lunch',f],D=(f)=>['20:00','Dinner + shake #3',[...f,S3]];
 const days={
-1:[[ '8:00','Breakfast',[['3 moong dal chilla (120 g dal) stuffed with 60 g paneer',520,36],C1]],['11:00','Snack',[['200 g Greek yogurt/hung dahi + 1 orange',200,20]]],['13:30','Lunch',[['2 roti',240,8],['1 cup Gujarati dal',180,10],['150 g cooked rice',195,4],['1 cup sabzi (low oil)',150,4],['Salad cucumber/onion/tomato',30,1]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['Tofu bhurji (200 g tofu, onion, garlic)',290,32],['1 roti',120,4]]]],
-2:[['8:00','Breakfast',[['Handvo 2 pcs (200 g)',320,12],['Paneer tikka 100 g (grilled)',265,18],C1]],['11:00','Snack',[['Moong sprouts chaat 150 g',160,12],['1 apple',95,0]]],['13:30','Lunch',[['2 roti',240,8],['1 cup dal fry',220,12],['1 cup chana sabzi',270,14],['150 g dahi',90,5]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['Tofu tikka 200 g',290,32],['100 g mixed sabzi',80,3]]]],
-3:[['8:00','Breakfast',[['3 plain dosa (no ghee) + 1 cup sambar',510,18],['150 g Greek yogurt',150,15],C1]],['11:00','Snack',[['150 g Greek yogurt + pinch chaat masala',150,15],['1 orange',60,1]]],['13:30','Lunch',[['150 g cooked rice',195,4],['1 cup Gujarati dal',180,10],['Paneer sabzi (100 g paneer)',300,18],['Salad',30,1]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['2 moong chilla stuffed with 100 g tofu',380,30]]]],
-4:[['8:00','Breakfast',[['Dhokla 4 pcs (150 g)',240,10],['Paneer 80 g (grilled/bhurji)',210,15],['150 g Greek yogurt',150,15],C1]],['11:00','Snack',[['Masala chana sprouts 150 g',180,12],['Grapes 150 g',100,1]]],['13:30','Lunch',[['2 roti',240,8],['1 cup dal fry',220,12],['Tofu-capsicum sabzi (150 g tofu)',240,24]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['Moong dal khichdi (60 g dal + 30 g rice)',330,16],['150 g dahi',90,5]]]],
-5:[['8:00','Breakfast',[['2 roti + paneer bhurji (120 g paneer)',570,30],C1]],['11:00','Snack',[['200 g Greek yogurt + 1 apple',295,20]]],['13:30','Lunch',[['150 g cooked rice',195,4],['1 cup chana masala',270,14],['1 cup Gujarati dal',180,10],['Salad',30,1]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['Tofu stir-fry with veggies (200 g tofu)',350,34],['1 roti',120,4]]]],
-6:[['8:00','Breakfast',[['Handvo 2 pcs (200 g)',320,12],['200 g Greek yogurt',200,20],C1]],['11:00','Snack',[['Moong sprouts chaat 150 g',160,12],['1 orange',60,1]]],['13:30','Lunch',[['2 roti',240,8],['1 cup Gujarati dal',180,10],['Paneer tikka 120 g',320,22],['1 cup sabzi',100,3]]],['16:30','Chai + pre-gym shake',[C2,SH]],['20:00','Dinner',[['3 moong chilla stuffed with 100 g tofu',420,30]]]],
-0:[['8:00','Breakfast',[['2 plain dosa + 1 cup sambar',390,15],['Paneer 80 g',210,15],C1]],['11:00','Snack',[['200 g Greek yogurt + 100 g grapes',270,20]]],['13:30','Lunch',[['1 cup dal fry',220,12],['150 g cooked rice',195,4],['1 roti',120,4],['1 cup chana sabzi',270,14]]],['16:30','Chai + shake (rest day)',[C2,SH]],['20:00','Dinner',[['Tofu bhurji (200 g tofu) with onion-capsicum',290,32]]]]};
+1:[B([['Dhokla 150 g (~5 pcs)',240,10]]),sn,LU([R2,GD,RI]),pg,D([['2 plain dosa (minimal oil)',240,6],DF1])],
+2:[B([['Handvo 150 g',240,9]]),sn,LU([R2,DF1,RI]),pg,D([R2,GD])],
+3:[B([['2 plain dosa (minimal oil)',240,6],DFh]),sn,LU([RI,['1½ cups Gujarati dal',270,15],R1]),pg,D([['Dhokla 150 g',240,10],GD])],
+4:[B([['Handvo 150 g',240,9]]),sn,LU([R3,DF1]),pg,D([RI,GD,R1])],
+5:[B([['Dhokla 150 g',240,10]]),sn,LU([R2,GD,RI]),pg,D([['Handvo 200 g',320,12],DFh])],
+6:[B([['2 plain dosa (minimal oil)',240,6],GDh]),sn,LU([RI,DF1,R2]),pg,D([['Dhokla 200 g',320,13]])],
+0:[B([['Handvo 150 g',240,9]]),sn,LU([R2,RI,GD]),pg,D([['3 plain dosa (minimal oil)',360,9],DFh])]};
 for(const k in days)days[k].unshift(['7:00','Wake-up',[DF]]);
 const U=['Bench press 4×8','Lat pulldown 4×10','Seated DB shoulder press 3×10','Seated cable row 3×12','Incline DB press 3×10','Biceps curl 3×12','Triceps pushdown 3×12'],
 L=['Leg press 4×10','Goblet squat 3×12','Romanian deadlift (DB) 3×10','Walking lunges 3×10/leg','Leg curl 3×12','Leg extension 3×12','Calf raises 4×15'];
